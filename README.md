@@ -5,4 +5,6 @@
 - mkdir media
 - cd media
 - mkdir documents
-- mkdir tmp
+- mkdir tmp 
+
+pip install -r requirements.txt
