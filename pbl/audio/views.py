@@ -102,13 +102,10 @@ def song_recognition(request):
     return render(request, 'recog.html', {'form': form})
 
 
-import pathlib
-
-
 def list_song(request):
-    path =str(pathlib.Path().resolve())  + '/media/documents/*.wav'
-    songs = glob.glob(path)
+    songs = glob.glob('pbl/media/documents/*.wav')
     res = ''
     for index, filename in enumerate(tqdm(sorted(songs))):
         res += filename + '\n'
+        # print('filename', filename)
     return HttpResponse(res, content_type="text/plain")
